@@ -1,0 +1,6 @@
+host='http://zabbix-command01.dev.phx7.llnw.net'
+api_host='http://zabbix-command01.dev.phx7.llnw.net/api_jsonrpc.php'
+m3_api_host='http://zabbix-command01.dev.phx7.llnw.net/llnw/api_jsonrpc.php'
+username='zabbix-api-limon-qa'
+password='YuN0cH4nGem3%'
+api_key='sjE4i'
