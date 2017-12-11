@@ -9,25 +9,30 @@ class ZabbixClient(object):
         self.base = host
         self.logger = logger.getLogger()
 
-    def make_request(self, method='POST', path='', body=None):
+    def make_request(self, method='POST', path='', data=None):
         if method=='GET':
             resp = requests.get(self.base+'/'+path,headers={"Content-type": "application/json"})
         if method=='POST':
-            resp = requests.post(self.base+'/'+path,json.dumps(body),headers={"Content-type": "application/json"})
+            resp = requests.post(self.base+'/'+path,data)
 
         self.logger.debug("Getting response with URL: %s\n"
-                          "Code: %s\nHeaders: %s\nBody: %s" % (resp.url, resp.status_code,
+                          "Code: %s\nHeaders: %s\ndata: %s" % (resp.url, resp.status_code,
                                                                resp.headers, resp.text))
         print resp.status_code
         print resp.url
         print resp.text
-        return json.loads(resp.text), resp.status_code, resp.url, json.dumps(body)
+        # return json.loads(resp.text), resp.status_code, resp.url, json.dumps(data)
 
 
 if __name__ == '__main__':
-    cl = ZabbixClient('http://zabbix.llnw.com')
-    cl.make_request(method='POST', path='llnw/api_jsonrpc.php', body=
-    {"key": "sjE4i", "jsonrpc": "2.0", "method": "ack.get", "id": 1,
-     "params":{"eventid":"100100727239590"}
-})
+    # cl = ZabbixClient('http://zabbix-command01.dev.phx7.llnw.net')
+
+    cl = ZabbixClient('https://zabbix.llnw.com')
+    # cl = ZabbixClient('https://zabbix-stage.llnw.net')
+
+
+    # cl.make_request(method='POST', path='llnw/ack.php',data={"key":"sjE4i","method":"get.ack","eventids":"47229345"})
+    # cl.make_request(method='POST', path='llnw/api_jsonrpc.php',data=json.dumps({"key":"sjE4i","method":"get.squelch","active":1}))
+    cl.make_request(method='POST', path='llnw/api_jsonrpc.php',data=json.dumps({"key":"sjE4i","jsonrpc":"2.0","method":"add.squelch","params":{"output":"json","hostname":["db-dev-60.phx3.llnw.net"],"username":"mbilichenko","reason":"False Positive","comment":"","start":"2017-12-11 07:11:29 America\/Phoenix","end":"2017-12-11 08:11:29 America\/Phoenix"}}))
+#
 
