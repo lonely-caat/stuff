@@ -9,7 +9,7 @@ from selenium.common.exceptions import NoSuchElementException
 baseurl = "http://zabbix-command01.dev.phx7.llnw.net/index.php"
 triggerurl = "https://zabbix-command01.dev.phx7.llnw.net/triggers.php?form=update&hostid=10084&triggerid=19922"
 username = "zabbix-api-limon-qa"
-password = "YuN0cH4nGem3%"
+password = ""
 
 xpaths = { 'usernameTxtBox': "//input[@id='name']",
            'passwordTxtBox': "//input[@name='password']",

@@ -31,9 +31,9 @@ if __name__ == '__main__':
     # cl = ZabbixClient('https://zabbix-stage.llnw.net')
 
 
-    # cl.make_request(method='POST', path='llnw/ack.php',data={"key":"sjE4i","method":"get.ack","eventids":"47229345"})
-    # cl.make_request(method='POST', path='llnw/api_jsonrpc.php',data=json.dumps({"key":"sjE4i","method":"get.squelch","active":1}))
-    # cl.make_request(method='POST', path='llnw/api_jsonrpc.php',data=json.dumps({"key":"sjE4i","jsonrpc":"2.0","method":"add.squelch","params":{"output":"json","hostname":["db-dev-60.phx3.llnw.net"],"username":"mbilichenko","reason":"False Positive","comment":"","start":"2017-12-11 07:11:29 America\/Phoenix","end":"2017-12-11 08:11:29 America\/Phoenix"}}))
+    # cl.make_request(method='POST', path='llnw/ack.php',data={"key":"","method":"get.ack","eventids":"47229345"})
+    # cl.make_request(method='POST', path='llnw/api_jsonrpc.php',data=json.dumps({"key":"","method":"get.squelch","active":1}))
+    # cl.make_request(method='POST', path='llnw/api_jsonrpc.php',data=json.dumps({"key":"","jsonrpc":"2.0","method":"add.squelch","params":{"output":"json","hostname":["db-dev-60.phx3.llnw.net"],"username":"mbilichenko","reason":"False Positive","comment":"","start":"2017-12-11 07:11:29 America\/Phoenix","end":"2017-12-11 08:11:29 America\/Phoenix"}}))
     cl.make_request(path='zabbix/api_jsonrpc.php',data=json.dumps({
     "jsonrpc": "2.0",
     "method": "host.get",
