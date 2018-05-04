@@ -1,0 +1,50 @@
+import requests
+import logging as logger
+import json
+from zabbix_auth import Auth
+from base_request import BaseRequest
+
+
+class ZabbixClient(BaseRequest):
+    def __init__(self, host, payload):
+        self.base = host
+        self.logger = logger.getLogger()
+        self.payload = payload
+
+    def query_api(self,data):
+        base = Auth()
+        # import pdb;
+        # pdb.set_trace()
+        post_data = dict(base.get_auth_token().items()+self.payload.items())
+        resp = self.make_request()
+
+        return json.loads(resp.text), 'zabbix client'
+                             # resp.status_code, resp.url
+
+
+if __name__ == '__main__':
+    # cl = ZabbixClient('http://zabbix-command01.dev.phx7.llnw.net')
+
+    # cl = ZabbixClient('https://zabbix.llnw.com')
+    cl = ZabbixClient('http://zabbix-command01.dev.phx7.llnw.net',payload={"method":"user.tableName","params":[]})
+
+
+    # cl.make_request(method='POST', path='llnw/ack.php',data={"key":"sjE4i","method":"get.ack","eventids":"47229345"})
+    # cl.make_request(method='POST', path='llnw/ack.php',data={"key":"sjE4i","method":"add.ack", "userid":"1234","triggerid":"139835"})
+#     cl.make_request(method='GET', path='api_jsonrpc.php',data=json.dumps({
+#     "jsonrpc": "2.0",
+#     "method": "user.login",
+#     "params": {
+#         "user": "zabbix-api-limon1",
+#         "password": ":QrTmcQm%SCh94B(#"
+#     },
+#     "id": 1,
+#     "auth": ""
+# }))
+    import pdb;pdb.set_trace()
+    a= cl.make_request(method='POST', path='api_jsonrpc.php',data=json.dumps({"jsonrpc": "2.0","method":"user.tableName","params":[],"id":"15162094350983","auth":"be4a29cd6e205fb2027893d76153881e"}))
+    print a
+    # cl.make_request(method='POST', path='llnw/api_jsonrpc.php',data=json.dumps({"key":"sjE4i","method":"get.squelch","active":1}))
+    # cl.make_request(method='POST', path='llnw/api_jsonrpc.php',data=json.dumps({"key":"sjE4i","jsonrpc":"2.0","method":"add.squelch","params":{"output":"json","hostname":["db-dev-60.phx3.llnw.net"],"username":"mbilichenko","reason":"False Positive","comment":"","start":"2017-12-11 07:11:29 America\/Phoenix","end":"2017-12-11 08:11:29 America\/Phoenix"}}))
+#
+
