@@ -7,9 +7,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 
 baseurl = "https://www.kredodirect.com.ua/web"
-l=['PkbnmczRjit5','PkbnmczRjityz5','CwerjFwrtqPkjv5','CwerjFwrtqPkjv','CwerjFwrtqDpkjv5','RjityzdUybdb7952','RjityznrjDuybdb5','PkbnmczRjit7952'
-   , 'RjityznrjdUybdb5', 'RjityzdUybdb5', 'CwerjFwrtqDpkjv5', 'CwerjFwrtqPkjv5','CwerjFwrtqPkjv','RjityznrjdUybdb5', 'RjityznrjdUybdb5','PkbnmczRjit5'
-   , 'Mafiaboyy!5', 'Mafiaboy!5', 'Mafiaboyy5!', 'Mafiaboyy5', 'Mafiaboyy7952', 'RjityzdUybdb5', 'PkbnmczRjit5']
+l=['asdadsds','asdsdsaadsads1','sadcasd124'.'asdasd123142']
 
 xpaths = { 'usernameTxtBox' : '//input[@id="client_id"]',
            'passwordTxtBox' : "//input[@id='password']",
