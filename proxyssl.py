@@ -92,9 +92,6 @@ def main():
         clinet_th.start()
         threads.append(clinet_th)
 
-    for t in threads:
-        t.join()
-
 
 if __name__ == '__main__':
     main()
