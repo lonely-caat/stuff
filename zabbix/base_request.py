@@ -18,10 +18,10 @@ class BaseRequest(object):
         self.logger.debug("Getting response with URL: %s\n"
                           "Code: %s\nHeaders: %s\ndata: %s" % (resp.url, resp.status_code,
                                                                resp.headers, resp.text))
-        print resp.status_code, 'base_request'
-        print resp.request, 'base_request'
-        print resp.url, 'base_request'
-        print resp.text, 'base_request'
+        print(resp.status_code, 'base_request')
+        print(resp.request, 'base_request')
+        print(resp.url, 'base_request')
+        print(resp.text, 'base_request')
 
         return json.loads(resp.text),\
                              # resp.status_code, resp.url

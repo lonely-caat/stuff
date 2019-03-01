@@ -14,9 +14,12 @@ xpaths = { 'usernameTxtBox' : "//input[@name='username']",
            'submitButton' :   "//input[@name='login']"
          }
 
-mydriver = webdriver.Firefox()
+#Disable buil in browser notifications
+chrome_options = webdriver.ChromeOptions()
+prefs = {"profile.default_content_setting_values.notifications" : 2}
+chrome_options.add_experimental_option("prefs",prefs)
+mydriver = webdriver.Chrome(chrome_options=chrome_options)
 mydriver.get(baseurl)
-mydriver.maximize_window()
 
 #Clear Username TextBox if already allowed "Remember Me"
 mydriver.find_element_by_xpath(xpaths['usernameTxtBox']).clear()

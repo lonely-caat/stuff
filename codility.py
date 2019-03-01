@@ -30,3 +30,5 @@ print add_links.find_elements_by_tag_name("a")[1].get_attribute("href")
 mydriver.implicitly_wait(5)
 not_add_link = mydriver.find_elements_by_xpath(xpaths['freeResults'])[0]
 not_add_link.find_element_by_tag_name("a").click()
+print len(add_links.find_elements_by_tag_name("li"))
+
