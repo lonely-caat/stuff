@@ -17,6 +17,7 @@ def gen_events_stateless(username,password, enable=True):
 
     #lay out a tunnel through jumphost
     subprocess.call('ssh -f -N -L {0}:{1}:22 {2}@dingo.llnw.com'.format(port,zabbix,username), shell=True)
+
     ssh = SSHClient()
     ssh.load_system_host_keys()
     ssh.connect('127.0.0.1',2216, username,password)
@@ -45,5 +46,5 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         print('Usage: %s <server-host> <server-port>' % sys.argv[0], sys.argv[1])
     else:
-        gen_events_stateless(username=input('Enter your LDAP username or hit "Enter" to use "{0}"'.format(os_user)) or os_user,
-                   password=getpass.getpass(prompt='Password:3'))
+        gen_events_stateless(username=input('Enter your LDAP username or hit "Enter" to use "{0}" \n'.format(os_user)) or os_user,
+                   password=getpass.getpass(prompt='LDAP Password'))
