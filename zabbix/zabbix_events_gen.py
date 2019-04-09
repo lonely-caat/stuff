@@ -41,6 +41,10 @@ if __name__ == '__main__':
     import sys
     import os
     os_user = os.getenv("USER")
+    # ensure 2/3 compatibility
+    try: input = raw_input
+    except NameError: pass
+
 
 
     if len(sys.argv) > 1:
