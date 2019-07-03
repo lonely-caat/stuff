@@ -21,6 +21,7 @@ class ZabbixClient(object):
         print(resp.status_code)
         print(resp.url)
         print(resp.text)
+        print(resp.json())
         # return json.loads(resp.text), resp.status_code, resp.url, json.dumps(data)
 
 
@@ -35,6 +36,8 @@ if __name__ == '__main__':
     # cl.make_request(method='POST', path='llnw/api_jsonrpc.php',data=json.dumps({"key":"sjE4i","method":"get.squelch","active":1}))
 
     cl.make_request(method='POST', path='api_jsonrpc.php',data=json.dumps({"key":"","jsonrpc":"2.0","method":"event.get","params":{"output":"json","hostname":["salt-epos-410-gphelps.saltdev.llnw.net"],"username":"mbilichenko","reason":"False Positive","comment":"","start":"2017-12-11 07:11:29 America\/Phoenix","end":"2017-12-11 08:11:29 America\/Phoenix"}}))
+    cl.make_request(method='POST', path='api_jsonrpc.php',data=json.dumps({"key":"","jsonrpc":"2.0","method":"event.get","params":{"output":"json"}}))
+
     # cl.make_request(path='zabbix/api_jsonrpc.php',data=json.dumps({
     # "jsonrpc": "2.0",
     # "method": "host.get",

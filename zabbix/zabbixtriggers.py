@@ -8,7 +8,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 baseurl = "http://zabbix-command01.dev.phx7.llnw.net/index.php"
 # baseurl = "https://zabbix-stage.llnw.net/index.php"
-triggerurl = "https://zabbix-command01.dev.phx7.llnw.net/triggers.php?form=update&hostid=10084&triggerid=19922"
+triggerurl = "https://zabbix-command01.dev.phx7.llnw.net/triggers.php?form=update&triggerid=23079&sid=5af91ffdc9de71c8"
 # triggerurl = "https://zabbix-stage.llnw.net/triggers.php?form=update&triggerid=100100004397305&sid=64c61129e5b34736"
 username = "zabbix-api-limon-qa"
 password = "YuN0cH4nGem4%"
@@ -49,6 +49,6 @@ for el in range(1,10):
         mydriver.find_element_by_xpath('//*[@id="priority"]/li[6]/label').click()
     mydriver.find_element_by_xpath(xpaths['save']).click()
 
-
+mydriver.close()
 
 # MA TRIGGERS https://zabbix-command01.dev.phx7.llnw.net/triggers.php?form=update&hostid=10001&triggerid=22314

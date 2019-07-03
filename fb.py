@@ -7,7 +7,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 baseurl = "https://www.facebook.com/"
 username = "zamoozyaka@gmail.com"
-password = "mafiagirl5"
+password = ""
 
 xpaths = { 'usernameTxtBox' : "//input[@id='email']",
            'passwordTxtBox' : "//input[@id='pass']",

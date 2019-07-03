@@ -12,7 +12,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 baseurl = "https://coub.com/"
 username = "hatred@ukr.net"
-password = "mafiaboy5"
+password = ""
 
 xpaths = { "login": '//button[contains(text(), "Log in")]',
            "first_coub": "//div[@class='viewer__shadow viewer__click -fill']"[0],

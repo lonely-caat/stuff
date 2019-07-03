@@ -1,2 +1,2 @@
 [pswds]
-ldap = 'Mafiagirl!1'
+ldap = '!1'
