@@ -1,7 +1,6 @@
 import requests
 import json
 
-url = "http://rts-sm-2.iad.qa.dev.llnw.net/streammanager/api/3.1/admin/event/meta/limelightlive/mmdstg001/t23?accessToken=v5qcb2yzl0thv2c"
 payload=json.dumps({
   "meta": {
     "stream": [
