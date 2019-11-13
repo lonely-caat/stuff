@@ -3,7 +3,7 @@ from .backend_suite import BackendSuite
 
 class BackendTest(BackendSuite):
 
-    #issue: JSON is not standartisized, e.g. sometimes no "rain" in response, sometimes empty dict, sometimes null
+    ##issue: JSON is not standartisized, e.g. sometimes no "rain" in response, sometimes empty dict, sometimes null
     def test_city(self):
         """Test Case - Backend - City.
             Pre-Conditions:
@@ -26,7 +26,7 @@ class BackendTest(BackendSuite):
                 ["weather", "coord", "base", "main", "visibility", "wind", "rain", "clouds", "dt", "sys", "timezone", "id",
                  "name", "cod"], response['body'])
 
-    # issue 5** errors and stack trace
+    ##issue 5** errors and stack trace
     def test_city_invalid_cities_neg(self):
         """Test Case - Backend - City invalid Negative.
             Pre-Conditions:
@@ -40,8 +40,8 @@ class BackendTest(BackendSuite):
             Next fields are returned in JSON:
 
         """
-        cities = ["Cat butt"*1024, "Phoenix=-", "ME ?gusto", "?/more", "\/n", "san & fran",
-                  "how ab = + $ , / ? % # [ ]out! this*"]
+        cities = ["Мяу Мяу Мяу!", "ME ?gusto", "?/more", "\/n", "san & fran>?}|",
+                  "how ab = + $ , / ? % # [ ]out! this*", "Cat butt"*1024]
         for city in cities:
             response = self.client.make_request("weather", {"q":city})
             self.assertEqual(response['code'], 400, "Expected Status 200")
