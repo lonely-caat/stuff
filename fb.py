@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 
 baseurl = "https://www.facebook.com/"
-username = "zamoozyaka@gmail.com"
+username = ""
 password = ""
 
 xpaths = { 'usernameTxtBox' : "//input[@id='email']",
