@@ -8,7 +8,7 @@ from email.mime.text import MIMEText
 
 
 def receipt_data():
-    with open('/Users/mbilichenko/Downloads/emails.csv', mode='r', ) as data:
+    with open('', mode='r', ) as data:
         #expected format:
         #me myself,mbilichenko@llnw.com,1360
         reader = data.read()
@@ -27,7 +27,7 @@ def receipt_data():
 def send_email():
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login("freshbignuts@gmail.com", "")
+    server.login("", "")
     buyers_dict = receipt_data()
     for buyer in buyers_dict:
 
