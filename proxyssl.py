@@ -7,12 +7,12 @@ import select
 import re
 
 RUN_PORT = 8888
-TARGET_HOST = 'limelightuat.service-now.com'
-#TARGET_HOST = 'control.llnw.com'
+TARGET_HOST = '
+#TARGET_HOST = 
 __keep_alive = '\r\nProxy-Connection: Keep-Alive'
 PROXY_CONNECT = 'CONNECT {0}:443 HTTP/1.1\r\nHost: {0}:443{1}\r\n\r\n'.format(TARGET_HOST, __keep_alive)
 PROXY_HOST = 'tnproxy.phx2.llnw.com'
-PROXY_PORT = 3128
+PROXY_PORT = 
 
 HOSTNAME = socket.gethostbyaddr(socket.gethostname())[0]
 if 'localhost' in HOSTNAME:
