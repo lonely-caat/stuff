@@ -2,7 +2,7 @@ import requests
 from pprint import pprint
 import json
 
-resp = requests.get('http://sp-api-qa.lldns.net/config-mgmt-api/v2/configs/optionSet')
+resp = requests.get('/config-mgmt-api/v2/configs/optionSet')
 results = (resp.json()['results'])
 print results
 print [x for x in results]
